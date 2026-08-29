@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil do Participante | Lean-Agile & Lean Office</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+:root{--navy:#10263f;--navy2:#173653;--gold:#c89a4b;--text:#24364a;--muted:#6f7d8d;--line:#d7dee7}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#edf2f7,#f8fafc);color:var(--text)}
+.wrapper{max-width:920px;margin:auto;padding:34px 18px 50px}.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:24px 24px 0 0;padding:34px;box-shadow:0 18px 50px rgba(18,38,62,.12)}
+.eyebrow{margin:0 0 10px;color:#e3bb73;font-size:13px;letter-spacing:1.7px;font-weight:700;text-transform:uppercase}h1{margin:0;font-size:clamp(30px,5vw,46px);line-height:1.08}.subtitle{margin:12px 0 0;color:#dbe5ef;line-height:1.55}
+form{background:#fff;border-radius:0 0 24px 24px;padding:32px 34px 38px;box-shadow:0 18px 50px rgba(18,38,62,.12)}.section{padding:8px 0 28px;border-bottom:1px solid var(--line);margin-bottom:28px}.section:last-of-type{border-bottom:none}.section-title{margin:0 0 7px;font-size:22px;color:var(--navy)}.section-help{margin:0 0 22px;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.full{grid-column:1/-1}label{display:block;font-size:14px;font-weight:700;margin-bottom:7px}.required{color:#b23b3b}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;border:1.5px solid var(--line);background:#fbfcfe;border-radius:12px;padding:13px 14px;font-size:15px;color:var(--text);outline:none}input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,154,75,.13);background:#fff}textarea{min-height:110px;resize:vertical}
+.course-box{border:1px solid #dfe5ec;background:#f7f9fc;border-radius:16px;padding:20px;margin-bottom:22px;line-height:1.6}.question{margin:0 0 14px;color:var(--navy);font-size:18px;line-height:1.4}.options{display:grid;gap:10px}.option{position:relative}.option input{position:absolute;opacity:0}.option label{margin:0;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;cursor:pointer;font-weight:600;line-height:1.4}.option label span{display:block;margin-top:3px;font-size:13px;color:var(--muted);font-weight:400}.option input:checked+label{border-color:var(--gold);background:#fff8ea;color:#6b4b17}.optional{font-weight:400;color:var(--muted);font-size:12px}
+.actions{display:flex;justify-content:center;padding-top:8px}button{border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),#d7ad63);color:#18293d;font-weight:800;font-size:16px;padding:15px 28px;min-width:230px;cursor:pointer}button:disabled{opacity:.6;cursor:not-allowed}.note{text-align:center;font-size:12px;color:var(--muted);margin-top:14px}.message{display:none;border-radius:14px;padding:14px 16px;margin-top:18px;text-align:center;font-weight:700}.success{background:#eef9f4;color:#1f7a55;border:1px solid #bfe1d2}.error{background:#fff1f1;color:#a12828;border:1px solid #e8bcbc}
+@media(max-width:700px){.wrapper{padding:18px 10px 30px}.hero{padding:26px 20px 22px;border-radius:18px 18px 0 0}form{padding:24px 18px 28px;border-radius:0 0 18px 18px}.grid{grid-template-columns:1fr}.full{grid-column:auto}button{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<header class="hero"><p class="eyebrow">Perfil do Participante</p><h1>Formação em Gestão Lean-Agile & Transformação Lean Office</h1><p class="subtitle">Este formulário tem como objetivo conhecer brevemente o perfil dos participantes e seu nível de familiaridade com os temas que serão trabalhados durante a formação.</p></header>
+<form id="participantForm">
+<section class="section"><h2 class="section-title">Dados do participante</h2><p class="section-help">Preencha seus dados básicos para identificação.</p><div class="grid">
+<div class="full"><label>Nome completo <span class="required">*</span></label><input type="text" name="nome" required></div>
+<div><label>Empresa <span class="required">*</span></label><input type="text" name="empresa" required></div>
+<div><label>Cargo/Função <span class="required">*</span></label><input type="text" name="cargo" required></div>
+<div><label>Área/Setor</label><input type="text" name="area"></div>
+<div><label>E-mail corporativo <span class="required">*</span></label><input type="email" name="email" required></div>
+<div><label>Telefone <span class="required">*</span></label><input type="tel" name="telefone" required placeholder="(00) 00000-0000"></div>
+</div></section>
+<section class="section"><h2 class="section-title">Sobre a formação</h2><div class="course-box">A formação abordará <strong>Gestão Lean-Agile</strong> e <strong>Transformação Lean Office</strong>, com foco em princípios e práticas voltados à gestão, eficiência, melhoria de processos e melhoria contínua.</div>
+<p class="question">Considerando os conteúdos que serão apresentados durante a formação, como você avalia seu nível atual de conhecimento sobre esses temas?</p><div class="options">
+<div class="option"><input type="radio" id="n1" name="nivel" value="Nenhum" required><label for="n1">Nenhum<span>Ainda não tive contato com os temas.</span></label></div>
+<div class="option"><input type="radio" id="n2" name="nivel" value="Básico"><label for="n2">Básico<span>Já tive algum contato ou conhecimento introdutório.</span></label></div>
+<div class="option"><input type="radio" id="n3" name="nivel" value="Intermediário"><label for="n3">Intermediário<span>Conheço os conceitos e algumas de suas aplicações.</span></label></div>
+<div class="option"><input type="radio" id="n4" name="nivel" value="Avançado"><label for="n4">Avançado<span>Possuo conhecimento consistente sobre os temas.</span></label></div>
+<div class="option"><input type="radio" id="n5" name="nivel" value="Experiência prática"><label for="n5">Experiência prática<span>Já apliquei esses conhecimentos profissionalmente.</span></label></div>
+</div></section>
+<section class="section"><h2 class="section-title">Expectativa sobre a formação</h2><p class="question">Qual é a sua principal expectativa em relação a esta formação?</p><div class="options">
+<div class="option"><input type="radio" id="e1" name="expectativa" value="Adquirir novos conhecimentos" required><label for="e1">Adquirir novos conhecimentos</label></div>
+<div class="option"><input type="radio" id="e2" name="expectativa" value="Aprimorar conhecimentos que já possuo"><label for="e2">Aprimorar conhecimentos que já possuo</label></div>
+<div class="option"><input type="radio" id="e3" name="expectativa" value="Conhecer ferramentas aplicáveis à minha rotina"><label for="e3">Conhecer ferramentas aplicáveis à minha rotina</label></div>
+<div class="option"><input type="radio" id="e4" name="expectativa" value="Melhorar processos e formas de trabalho"><label for="e4">Melhorar processos e formas de trabalho</label></div>
+<div class="option"><input type="radio" id="e5" name="expectativa" value="Desenvolver uma visão mais estratégica sobre gestão e melhoria contínua"><label for="e5">Desenvolver uma visão mais estratégica sobre gestão e melhoria contínua</label></div>
+<div class="option"><input type="radio" id="e6" name="expectativa" value="Outro"><label for="e6">Outro</label></div></div>
+<div style="margin-top:22px"><label>Conte-nos brevemente sobre algum conhecimento ou experiência anterior relacionado aos temas da formação <span class="optional">(opcional)</span></label><textarea name="experiencia" placeholder="Escreva apenas se desejar compartilhar alguma experiência anterior."></textarea></div></section>
+<div class="actions"><button id="submitBtn" type="submit">ENVIAR FORMULÁRIO</button></div><p class="note">Os campos marcados com * são obrigatórios.</p>
+<div id="success" class="message success">Formulário enviado com sucesso. Obrigado!</div><div id="error" class="message error">Não foi possível enviar agora. Verifique sua conexão e tente novamente.</div>
+</form></div>
+<script>
+emailjs.init({ publicKey: "PMoRUdl4xFw7ZtdtR" });
+const form=document.getElementById("participantForm"),btn=document.getElementById("submitBtn"),ok=document.getElementById("success"),err=document.getElementById("error");
+form.addEventListener("submit",async function(e){
+ e.preventDefault(); if(!form.checkValidity()){form.reportValidity();return;}
+ btn.disabled=true;btn.textContent="ENVIANDO...";ok.style.display="none";err.style.display="none";
+ try{
+   await emailjs.sendForm("service_b088odl","template_j1s620e",form);
+   ok.style.display="block";form.reset();ok.scrollIntoView({behavior:"smooth",block:"center"});
+ }catch(error){
+   console.error("EmailJS:",error);err.style.display="block";err.scrollIntoView({behavior:"smooth",block:"center"});
+ }finally{btn.disabled=false;btn.textContent="ENVIAR FORMULÁRIO";}
+});
+</script>
+</body></html>
